@@ -1,0 +1,180 @@
+*{/* Remove margens e espaçamentos padrões de todos os elementos */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{/* Configurações gerais da página */
+    font-family: Arial, Helvetica, sans-serif;/* Define a fonte principal */
+    background: linear-gradient(to right, #dbeafe, #eff6ff);     /* Cria um fundo com degradê azul claro */
+    min-height: 100vh;    /* Define altura mínima da página */
+    padding-top: 120px;   /* Espaço para não ficar escondido atrás do cabeçalho */
+    padding-bottom: 90px; /* Espaço para não ficar escondido atrás do rodapé */
+}
+header{/* Cabeçalho fixo no topo */
+    background-color: #1e3a8a;  /* Cor de fundo */
+    color: white; /* Cor das letras */
+    text-align: center; /* Centraliza o conteúdo */
+    padding: 20px;  /* Espaçamento interno */
+    width: 100%;    /* O cabeçalho ocupa toda a largura */
+    position: fixed;  /* Mantém o cabeçalho fixo no topo */
+    top: 0;     /* Distância do topo */
+    left: 0;      /* Distância da esquerda */
+    z-index: 10;  /* Mantém o cabeçalho sobre os demais elementos */
+}
+nav{  /* Área do menu */
+    margin-top: 15px;   /* Espaçamento superior */
+}
+nav a{  /* Links do menu */
+    color: white;  /* Cor das letras */
+    text-decoration: none;    /* Remove o sublinhado */
+    margin: 15px;     /* Espaçamento entre os links */
+    font-size: 18px;  /* Tamanho da fonte */
+    font-weight: bold;  /* Negrito */     
+}
+nav a:hover{  /* Efeito ao passar o mouse no menu */
+    color: yellow;     /* Altera a cor para amarelo */
+}
+main{      /* Área principal */
+    width: 90%; /* Define largura de 90% */
+    margin: auto;  /* Centraliza horizontalmente */
+}
+.pagina{ /* Seções da página */
+    text-align: center;   /* Centraliza os textos */
+    margin-bottom: 50px;  /* Espaço inferior */
+}
+.pagina h2{  /* Título principal */
+    color: #1e3a8a;  /* Cor azul */
+    font-size: 32px;   /* Tamanho da fonte */
+    margin-bottom: 20px;  /* Espaço inferior */
+}
+.descricao{   /* Texto descritivo */
+    font-size: 18px;      /* Tamanho da letra */
+    margin-bottom: 40px;  /* Espaço inferior */ 
+}
+.cards{     /* Área dos flashcards */
+    display: flex;     /* Organiza os elementos em linha */
+    justify-content: center;    /* Centraliza os cartões */
+    gap: 30px;  /* Espaçamento entre os cartões */
+    flex-wrap: wrap;    /* Permite quebrar linha em telas pequenas */
+}
+.card{  /* Área externa do cartão */
+    width: 240px;     /* Largura */
+    height: 220px;     /* Altura */
+    perspective: 1000px;     /* Cria efeito de profundidade 3D */
+}
+.card-interno{    /* Parte interna que irá girar */
+    width: 100%;    /* Ocupa toda a largura */
+    height: 100%;    /* Ocupa toda a altura */
+    position: relative;    /* Permite posicionar frente e verso */
+    transition: 1s;    /* Tempo da animação */
+    transform-style: preserve-3d;    /* Mantém o efeito 3D */
+}
+.card:hover .card-interno{     /* Ao passar o mouse sobre o cartão */
+    transform: rotateY(180deg);     /* Faz o cartão girar */
+    box-shadow:
+    0 0 20px #3b82f6,
+    0 0 40px #60a5fa,
+    0 0 60px #93c5fd;    /* Cria uma sombra azul ao redor */
+    border-radius: 20px;   /* Bordas arredondadas */
+}
+.frente,
+.verso{  /* Frente e verso possuem configurações iguais */
+
+    position: absolute;
+    /* Posição absoluta dentro do cartão */
+    width: 100%;
+   /* Largura total */
+    height: 100%;
+    /* Altura total */
+    border-radius: 20px;
+    /* Bordas arredondadas */
+    backface-visibility: hidden;
+    /* Esconde a face traseira */
+    display: flex;
+    /* Utiliza Flexbox */
+    flex-direction: column;
+    /* Organiza em coluna */
+    justify-content: center;
+    /* Centraliza verticalmente */
+    align-items: center;
+    /* Centraliza horizontalmente */
+    text-align: center;
+    /* Centraliza o texto */
+    padding: 25px;
+    /* Espaçamento interno */
+    box-shadow: 0 0 12px rgba(0,0,0,0.3);
+    /* Sombra comum */
+}
+/* Parte frontal */
+.frente{
+
+    /* Fundo branco */
+    background-color: white;
+
+    /* Letras azuis */
+    color: #1e3a8a;
+}
+
+
+/* Parte traseira */
+.verso{
+
+    /* Fundo azul */
+    background-color: #2563eb;
+
+    /* Letras brancas */
+    color: white;
+
+    /* Deixa o verso preparado para aparecer após a rotação */
+    transform: rotateY(180deg);
+}
+
+
+/* Títulos dos cartões */
+.frente h3,
+.verso h3{
+
+    /* Espaço inferior */
+    margin-bottom: 20px;
+}
+
+
+/* Texto dos cartões */
+.frente p,
+.verso p{
+
+    /* Tamanho da fonte */
+    font-size: 17px;
+
+    /* Espaçamento entre linhas */
+    line-height: 25px;
+}
+
+
+/* Rodapé fixo na parte inferior */
+footer{
+
+    /* Cor de fundo */
+    background-color: #1e3a8a;
+
+    /* Cor do texto */
+    color: white;
+
+    /* Centraliza o texto */
+    text-align: center;
+
+    /* Espaçamento interno */
+    padding: 15px;
+
+    /* Ocupa toda a largura */
+    width: 100%;
+
+    /* Mantém o rodapé fixo */
+    position: fixed;
+
+    /* Encostado na parte inferior */
+    bottom: 0;
+
+    /* Encostado na esquerda */
+    left: 0;
+}
